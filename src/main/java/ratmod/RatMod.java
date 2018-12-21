@@ -81,6 +81,8 @@ public class RatMod
         logger.info("Add Cards");
         // Add the cards
         BaseMod.addCard(new FanOfKnives());
+        BaseMod.addCard(new Lunge());
+        BaseMod.addCard(new Disembowel());
         BaseMod.addCard(new OpeningStrike());
         BaseMod.addCard(new ColdBlood());
         BaseMod.addCard(new MimicPod());
@@ -91,6 +93,8 @@ public class RatMod
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
         UnlockTracker.unlockCard(FanOfKnives.ID);
+        UnlockTracker.unlockCard(Lunge.ID);
+        UnlockTracker.unlockCard(Disembowel.ID);
         UnlockTracker.unlockCard(OpeningStrike.ID);
         UnlockTracker.unlockCard(ColdBlood.ID);
         UnlockTracker.unlockCard(Shadowstep.ID);

@@ -20,6 +20,14 @@
 		"NAME": "Opening Strike",
 		"DESCRIPTION": "Innate. Deal !D! damage twice. If this was the first card played this turn, deal !D! damage again. NL Exhaust."
 	},
+	"rat:Disembowel": {
+		"NAME": "Disembowel",
+		"DESCRIPTION": "Deal !D! damage. Combo 2: Apply !M! Weak. Combo 3: Apply !M! Vulnerable. Combo 5: Deal !D! damage again. Combo 6: Add a copy of this card to your hand."
+	},
+	"rat:Lunge": {
+		"NAME": "Lunge",
+		"DESCRIPTION": "Gain !B! Block. Combo 2: Gain !B! Block next turn. Combo 3: Gain !M! Plated Armor. Combo 5: Gain !M! Metalicize. Combo 6: Gain !M! Dexterity."
+	},
 	"rat:Sprint": {
 		"NAME": "Sprint",
 		"DESCRIPTION": "Draw !M! cards. NL Combo 2: Draw !M! more cards."
