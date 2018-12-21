@@ -1,0 +1,67 @@
+package ratmod.cards;
+
+import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
+import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.cards.*;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import basemod.abstracts.CustomCard;
+import ratmod.RatMod;
+
+public class ColdBlood extends CustomCard {
+
+    public static final String ID = RatMod.makeID("ColdBlood");
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String IMG = RatMod.makePath(RatMod.DEFAULT_UNCOMMON_ATTACK);
+
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardType TYPE = CardType.POWER;
+    public static final CardColor COLOR = CardColor.GREEN;
+
+    public static final int STR_GAIN = 2;
+
+
+    private static int COST = 1;
+
+    public ColdBlood() {
+        super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        this.baseMagicNumber = STR_GAIN;
+        this.magicNumber = this.baseMagicNumber;
+
+    }
+
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        if (AbstractDungeon.actionManager.cardsPlayedThisTurn.size() >= 3) {
+            AbstractDungeon.actionManager.addToBottom(new VFXAction(p, new InflameEffect(p), 0.3F));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
+            AbstractDungeon.actionManager.addToBottom(new VFXAction(p, new InflameEffect(p), 0.3F));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
+        }   else    {
+            AbstractDungeon.actionManager.addToBottom(new VFXAction(p, new InflameEffect(p), 0.3F));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
+        }
+
+    }
+
+    public AbstractCard makeCopy() {
+        return new ColdBlood();
+
+    }
+
+    public void upgrade() {
+        if (!this.upgraded) {
+            upgradeName();
+            this.initializeDescription();
+            this.upgradeMagicNumber(1);
+        }
+    }
+}            

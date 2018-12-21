@@ -1,0 +1,11 @@
+{
+  "modid": "ratmod",
+  "name": "RatMod",
+  "author_list": ["Coach"],
+  "description": "It's a mod, I'm sure of it",
+  "version": "1.0.1",
+  "sts_version": "10-25-2018",
+  "credits": "Big thanks to Reina code-wise and to Jedi for letting me borrow his main.jar (along with many other things but don't tell him!).",
+  "mts_version": "3.5.0",
+  "dependencies": ["basemod"]
+}

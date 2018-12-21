@@ -1,0 +1,27 @@
+{
+	"rat:FanOfKnives": {
+		"NAME": "Fan of Knives",
+		"DESCRIPTION": "Deal !D! damage to all enemies twice. NL Draw 1 card.",
+		"UPGRADE_DESCRIPTION": "Deal !D! damage to all enemies twitce. NL Draw 2 cards."
+	},
+	"rat:ColdBlood": {
+		"NAME": "Cold Blood",
+		"DESCRIPTION": "Gain !M! Strength. NL Combo 3: Gain !M! Strength again."
+	},
+	"rat:Shadowstep": {
+		"NAME": "Shadowstep",
+		"DESCRIPTION": "Gain !M! Dexterity until the end of the turn."
+	},
+	"rat:MimicPod": {
+		"NAME": "Mimic Pod",
+		"DESCRIPTION": "Draw 2 cards. Gain !M! Strength for each Attack drawn, and gain !M! Dexterity for each Skill drawn."
+	},
+	"rat:OpeningStrike": {
+		"NAME": "Opening Strike",
+		"DESCRIPTION": "Innate. Deal !D! damage twice. If this was the first card played this turn, deal !D! damage again. NL Exhaust."
+	},
+	"rat:Sprint": {
+		"NAME": "Sprint",
+		"DESCRIPTION": "Draw !M! cards. NL Combo 2: Draw !M! more cards."
+	}
+}
