@@ -1,5 +1,6 @@
 package ratmod.cards;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.*;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -9,41 +10,50 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import basemod.abstracts.CustomCard;
 import ratmod.RatMod;
+import ratmod.powers.*;
 
-public class Sprint extends CustomCard {
+public class SiphonBlood extends CustomCard {
 
-    public static final String ID = RatMod.makeID("Sprint");
+    public static final String ID = RatMod.makeID("SiphonBlood");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = RatMod.makePath(RatMod.SprintPNG);
+    public static final String IMG = RatMod.makePath(RatMod.AtrophicSteroidsPNG);
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = CardColor.GREEN;
 
-    private static int COST = 1;
-    private static int DRAW_AMT = 2;
+    private static int COST = 2;
+    private int BLOOD_AMT;
+    private int DAMAGE = 3;
 
-    public Sprint() {
+    public SiphonBlood() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.baseMagicNumber = DRAW_AMT;
-        this.magicNumber = this.baseMagicNumber;
+        this.baseDamage = DAMAGE;
+        this.damage = this.baseDamage;
+
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
-        if (AbstractDungeon.actionManager.cardsPlayedThisTurn.size() >= 2) {
-            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
-        }
+        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            if (mo.hasPower("Bleeding")) {
+                BLOOD_AMT = mo.getPower("Bleeding").amount;
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new BleedingPower(mo, p, -BLOOD_AMT), -BLOOD_AMT));
+                p.heal((BLOOD_AMT / 4), true);
+            }
 
+        }
 
     }
 
     public AbstractCard makeCopy() {
-        return new Sprint();
+        return new SiphonBlood();
+
+
 
     }
 
@@ -51,7 +61,6 @@ public class Sprint extends CustomCard {
         if (!this.upgraded) {
             upgradeName();
             this.initializeDescription();
-            this.upgradeMagicNumber(1);
         }
     }
 }            

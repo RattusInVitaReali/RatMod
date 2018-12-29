@@ -16,7 +16,7 @@ public class Lunge extends CustomCard {
 
     public static final String ID = RatMod.makeID("Lunge");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = RatMod.makePath(RatMod.DEFAULT_UNCOMMON_ATTACK);
+    public static final String IMG = RatMod.makePath(RatMod.LungePNG);
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;

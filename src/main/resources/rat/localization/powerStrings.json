@@ -1,0 +1,40 @@
+{
+  "Bleeding": {
+    "NAME": "Bleeding",
+    "DESCRIPTIONS": [
+      "At the start of your turn, lose ",
+      " HP.",
+      "At the start of its turn, loses "
+    ]
+  },
+  "VenomousWounds": {
+    "NAME": "Venomous Wounds",
+    "DESCRIPTIONS": [
+      "Whenever you deal unblocked damage, if the target is Poisoned, apply ",
+      " Bleeding, and if the target is Bleeding, apply ",
+      " Poison."
+
+    ]
+  },
+  "Silvered": {
+    "NAME": "Silvered",
+    "DESCRIPTIONS": [
+      "This creature is affected by ",
+      " Silvered stacks. Upon reaching 3, any damage taken activates the Silver, dealing 30 additional damage and cleansing it."
+    ]
+  },
+  "BloodPact": {
+    "NAME": "Blood Pact",
+    "DESCRIPTIONS": [
+      "At the start of your turn, gain 1 Bleeding ",
+      " Dexterity, ",
+      " Strength, and [G]."
+    ]
+  },
+  "SilverCoating": {
+    "NAME": "Silver Coating",
+    "DESCRIPTIONS": [
+      "Whenever you deal more than 8 damage to an enemy, apply 1 Silvered."
+    ]
+  }
+}

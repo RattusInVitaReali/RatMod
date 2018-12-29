@@ -16,7 +16,7 @@ public class Shadowstep extends CustomCard {
 
     public static final String ID = RatMod.makeID("Shadowstep");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = RatMod.makePath(RatMod.DEFAULT_UNCOMMON_ATTACK);
+    public static final String IMG = RatMod.makePath(RatMod.ShadowstepPNG);
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -26,7 +26,7 @@ public class Shadowstep extends CustomCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = CardColor.GREEN;
 
-    private static int COST = 1;
+    private static int COST = 0;
     private static int DEX_GAIN = 2;
 
 

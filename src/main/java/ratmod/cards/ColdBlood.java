@@ -17,7 +17,7 @@ public class ColdBlood extends CustomCard {
 
     public static final String ID = RatMod.makeID("ColdBlood");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = RatMod.makePath(RatMod.DEFAULT_UNCOMMON_ATTACK);
+    public static final String IMG = RatMod.makePath(RatMod.ColdBloodPNG);
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -36,6 +36,7 @@ public class ColdBlood extends CustomCard {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = STR_GAIN;
         this.magicNumber = this.baseMagicNumber;
+        this.exhaust = true;
 
     }
 

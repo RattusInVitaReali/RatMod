@@ -17,16 +17,13 @@ import ratmod.RatMod;
 public class FanOfKnives extends CustomCard {
 
 
-    // TEXT DECLARATION
-
     public static final String ID = RatMod.makeID("FanOfKnives");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = RatMod.makePath(RatMod.DEFAULT_UNCOMMON_ATTACK);
+    public static final String IMG = RatMod.makePath(RatMod.FanOfKnivesPNG);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
-    // STAT DECLARATION
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
@@ -38,12 +35,12 @@ public class FanOfKnives extends CustomCard {
     private static final int UPGRADE_PLUS_DMG = 2;
     private static final int NUM_CARDS = 1;
 
-    // /STAT DECLARATION/
 
     public FanOfKnives() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.baseDamage = DAMAGE;
-        this.magicNumber = NUM_CARDS;
+        this.baseMagicNumber = NUM_CARDS;
+        this.magicNumber = this.baseMagicNumber;
     }
 
     // Actions the card should do.

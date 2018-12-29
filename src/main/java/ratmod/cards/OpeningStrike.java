@@ -18,7 +18,7 @@ public class OpeningStrike extends CustomCard {
 
     public static final String ID = RatMod.makeID("OpeningStrike");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = RatMod.makePath(RatMod.DEFAULT_UNCOMMON_ATTACK);
+    public static final String IMG = RatMod.makePath(RatMod.OpeningStrikePNG);
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;

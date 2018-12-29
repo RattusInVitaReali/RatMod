@@ -8,42 +8,41 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import basemod.abstracts.CustomCard;
+import ratmod.powers.VenomousWoundsPower;
 import ratmod.RatMod;
 
-public class Sprint extends CustomCard {
+public class VenomousWounds extends CustomCard {
 
-    public static final String ID = RatMod.makeID("Sprint");
+    public static final String ID = RatMod.makeID("VenomousWounds");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String IMG = RatMod.makePath(RatMod.SprintPNG);
+    public static final String IMG = RatMod.makePath(RatMod.ColdBloodPNG);
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.SKILL;
+    private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = CardColor.GREEN;
 
-    private static int COST = 1;
-    private static int DRAW_AMT = 2;
+    private static int COST = 2;
+    private static int AMT = 1;
 
-    public Sprint() {
+    public VenomousWounds() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.baseMagicNumber = DRAW_AMT;
+        this.baseMagicNumber = AMT;
         this.magicNumber = this.baseMagicNumber;
+
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
-        if (AbstractDungeon.actionManager.cardsPlayedThisTurn.size() >= 2) {
-            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
-        }
 
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new VenomousWoundsPower(p, this.magicNumber), this.magicNumber));
 
     }
 
     public AbstractCard makeCopy() {
-        return new Sprint();
+        return new VenomousWounds();
 
     }
 
@@ -51,7 +50,7 @@ public class Sprint extends CustomCard {
         if (!this.upgraded) {
             upgradeName();
             this.initializeDescription();
-            this.upgradeMagicNumber(1);
+            this.upgradeBaseCost(1);
         }
     }
 }            

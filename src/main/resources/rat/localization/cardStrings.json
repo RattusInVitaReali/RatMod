@@ -1,0 +1,92 @@
+{
+	"rat:FanOfKnives": {
+		"NAME": "Fan of Knives",
+		"DESCRIPTION": "Deal !D! damage to all enemies twice. NL Draw 1 card.",
+		"UPGRADE_DESCRIPTION": "Deal !D! damage to all enemies twice. NL Draw 2 cards."
+	},
+	"rat:ColdBlood": {
+		"NAME": "Cold Blood",
+		"DESCRIPTION": "Gain !M! Strength. NL Combo 3: Gain !M! Strength again. NL Exhaust."
+	},
+	"rat:Shadowstep": {
+		"NAME": "Shadowstep",
+		"DESCRIPTION": "Gain !M! Dexterity until the end of the turn."
+	},
+	"rat:MimicPod": {
+		"NAME": "Mimic Pod",
+		"DESCRIPTION": "Draw 2 cards. Gain !M! Strength for each Attack drawn, and gain !M! Dexterity for each Skill drawn."
+	},
+	"rat:OpeningStrike": {
+		"NAME": "Opening Strike",
+		"DESCRIPTION": "Innate. Deal !D! damage twice. If this was the first card played this turn, deal !D! damage again. NL Exhaust."
+	},
+	"rat:Disembowel": {
+		"NAME": "Disembowel",
+		"DESCRIPTION": "Deal !D! damage. Combo 2: Apply !M! Weak. Combo 3: Apply !M! Vulnerable. Combo 5: Deal !D! damage again. Combo 6: Add a copy of this card to your hand."
+	},
+	"rat:Lunge": {
+		"NAME": "Lunge",
+		"DESCRIPTION": "Gain !B! Block. Combo 2: Gain !B! Block next turn. Combo 3: Gain !M! Plated Armor. Combo 5: Gain !M! Metalicize. Combo 6: Gain !M! Dexterity. Exhaust."
+	},
+	"rat:WitheringShackles": {
+		"NAME": "Withering Shackles",
+		"DESCRIPTION": "Apply 3 Weak. The enemy loses !M! Strength. NL Exhaust."
+	},
+	"rat:AtrophicSteroids": {
+		"NAME": "Atrophic Steroids",
+		"DESCRIPTION": "Gain !M! Strength and Dexterity. Lose 5 Strength and Dexterity at the end of your turn. Poison yourself for 6. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Gain !M! Strength and Dexterity. Lose 7 Strength and Dexterity at the end of your turn. Poison yourself for 6. NL Exhaust."
+	},
+	"rat:EchoingStrikes": {
+		"NAME": "Echoing Strikes",
+		"DESCRIPTION": "Deal !D! damage twice. NL Exhaust. NL Combo 2: Has Echo."
+	},
+	"rat:RuptureArtery": {
+		"NAME": "Rupture Artery",
+		"DESCRIPTION": "Deal !D! damage. Apply !M! Bleeding."
+	},
+	"rat:Dispatch": {
+		"NAME": "Dispatch",
+		"DESCRIPTION": "Deal !D! damage. Apply (!M! + your current Strength) Bleeding."
+	},
+	"rat:VenomousWounds": {
+		"NAME": "Venomous Wounds",
+		"DESCRIPTION": "Whenever an attack deal unblocked damage, if the target is Poisoned, apply !M! Bleeding, and if the target is Bleeding, apply !M! Poison."
+	},
+	"rat:Exsanguinate": {
+		"NAME": "Exsanguinate",
+		"DESCRIPTION": "Deal damage equal to !M! times the Bleed stacks on the target, then remove all Bleed from said target."
+	},
+	"rat:Garrote": {
+		"NAME": "Garrote",
+		"DESCRIPTION": "Deal !D! damage. Combo 2: Apply 1 Vulnerable and !M! Bleeding. Exhaust. Combo 3: Has Echo instead of Exhaust."
+	},
+	"rat:BloodPact": {
+		"NAME": "Blood Pact",
+		"DESCRIPTION": "At the start of each turn, gain 1 Bleeding, !M! Dexterity, !M! Strength and [G]."
+	},
+	"rat:DextrousStrike": {
+		"NAME": "Dextrous Strike",
+		"DESCRIPTION": "Deal ( !D! + your current Dexterity ) damage twice. Does not scale with Strength. "
+	},
+	"rat:SiphonBlood": {
+		"NAME": "Siphon Blood",
+		"DESCRIPTION": "Deal !D! damage to every enemy affected by Bleeding. Then, remove all Bleeding from all enemies and heal for 25% of the amount."
+	},
+	"rat:SilveredBlade": {
+		"NAME": "Silvered Blade",
+		"DESCRIPTION": "Deal !D! damage. Apply !M! Silvered."
+	},
+	"rat:SilverCoating": {
+		"NAME": "Silver Coating",
+		"DESCRIPTION": "Whenever you deal more than 8 damage to an enemy, apply 1 Silvered."
+	},
+	"rat:MoondustBomb": {
+		"NAME": "Moondust Bomb",
+		"DESCRIPTION": "Gain !B! Block. Apply !M! Silvered to all enemies."
+	},
+	"rat:Sprint": {
+		"NAME": "Sprint",
+		"DESCRIPTION": "Draw !M! cards. NL Combo 2: Draw !M! more cards."
+	}
+}
