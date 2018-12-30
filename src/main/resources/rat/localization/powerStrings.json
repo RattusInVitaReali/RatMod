@@ -36,5 +36,11 @@
     "DESCRIPTIONS": [
       "Whenever you deal more than 8 damage to an enemy, apply 1 Silvered."
     ]
+  },
+  "SiphonSilver": {
+    "NAME": "Siphon Silver",
+    "DESCRIPTIONS": [
+      "Whenever you deal more than damage to an enemy affected by Silvered, heal for 2 times the amount of Silvered."
+    ]
   }
 }

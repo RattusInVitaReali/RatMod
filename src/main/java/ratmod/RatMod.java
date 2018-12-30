@@ -43,6 +43,7 @@ public class RatMod
     public static final String BloodPactPNG = "powers/BloodPact.png";
     public static final String SilveredPNG = "powers/Silvered.png";
     public static final String SilverCoatingPNG = "powers/SilverCoating.png";
+    public static final String SiphonSilverPNG = "powers/SiphonSilver.png";
 
 
 
@@ -53,6 +54,7 @@ public class RatMod
     public static Texture getBloodPactTexture() { return new Texture (makePath(BloodPactPNG)); }
     public static Texture getSilveredTexture() { return new Texture(makePath(SilveredPNG)); }
     public static Texture getSilverCoatingTexture() { return new Texture(makePath(SilverCoatingPNG)); }
+    public static Texture getSiphonSilverTexture() { return new Texture(makePath(SiphonSilverPNG)); }
 
 
 
@@ -104,6 +106,9 @@ public class RatMod
         logger.info("Add Cards");
         // Add the cards
         BaseMod.addCard(new FanOfKnives());
+        BaseMod.addCard(new ArgentInfusion());
+        BaseMod.addCard(new SilverDagger());
+        BaseMod.addCard(new SiphonSilver());
         BaseMod.addCard(new MoondustBomb());
         BaseMod.addCard(new SilverCoating());
         BaseMod.addCard(new SilveredBlade());
@@ -129,7 +134,10 @@ public class RatMod
 
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
+        UnlockTracker.unlockCard(ArgentInfusion.ID);
         UnlockTracker.unlockCard(MoondustBomb.ID);
+        UnlockTracker.unlockCard(SilverDagger.ID);
+        UnlockTracker.unlockCard(SiphonSilver.ID);
         UnlockTracker.unlockCard(SilverCoating.ID);
         UnlockTracker.unlockCard(SilveredBlade.ID);
         UnlockTracker.unlockCard(BloodPact.ID);
@@ -171,8 +179,6 @@ public class RatMod
                 "rat/localization/cardStrings.json");
         BaseMod.loadCustomStringsFile(PowerStrings.class,
                 "rat/localization/powerStrings.json");
-        BaseMod.loadCustomStringsFile(RelicStrings.class,
-                "rat/localization/relicStrings.json");
 
         logger.info("Done editing strings");
     }

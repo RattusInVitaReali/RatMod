@@ -85,6 +85,18 @@
 		"NAME": "Moondust Bomb",
 		"DESCRIPTION": "Gain !B! Block. Apply !M! Silvered to all enemies."
 	},
+	"rat:SilverDagger": {
+		"NAME": "Silver Dagger",
+		"DESCRIPTION": "Deal !D! damage. NL Combo 4: apply !M! Silvered."
+	},
+	"rat:ArgentInfusion": {
+		"NAME": "Argent Infusion",
+		"DESCRIPTION": "Gain !B! Block for each Silvered stack on every enemy."
+	},
+	"rat:SiphonSilver": {
+		"NAME": "Siphon Silver",
+		"DESCRIPTION": "Whenever you attack an enemy affected by Silvered, heal for 2 times the amount of silvered."
+	},
 	"rat:Sprint": {
 		"NAME": "Sprint",
 		"DESCRIPTION": "Draw !M! cards. NL Combo 2: Draw !M! more cards."

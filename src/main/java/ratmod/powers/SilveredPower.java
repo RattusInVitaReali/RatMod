@@ -2,6 +2,7 @@ package ratmod.powers;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -48,7 +49,7 @@ public class SilveredPower extends AbstractPower {
             AbstractPower p = this.owner.getPower("Silvered");
             if (p != null)
             {
-                this.owner.powers.remove(p);
+                AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, SilveredPower.POWER_ID));
             }
 
             AbstractDungeon.actionManager.addToBottom(new DamageAction(owner, new DamageInfo(owner, 30), AbstractGameAction.AttackEffect.SLASH_HEAVY));
