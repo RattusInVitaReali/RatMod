@@ -1,0 +1,14 @@
+{
+  "rat:SilveredSilent": {
+    "NAME": "Silvered",
+    "CARD_IDS": [
+      "rat:ArgentInfusion",
+      "rat:MoondustBomb",
+      "rat:OpeningStrike",
+      "rat:SilverCoating",
+      "rat:SilverDagger",
+      "rat:SilveredBlade",
+      "rat:SiphonSilver"
+    ]
+  }
+}

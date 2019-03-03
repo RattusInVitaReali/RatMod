@@ -42,6 +42,10 @@ public class VenomousWoundsPower
         {
             if (target.hasPower("Poison")) {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, this.owner, new BleedingPower(target, this.owner, this.amount), this.amount, true));
+                if (AbstractDungeon.player.hasRelic("rat:RedSneckoSkull")) {
+                    AbstractDungeon.player.getRelic("rat:RedSneckoSkull").flash();
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, this.owner, new BleedingPower(target, this.owner, 1), 1));
+                }
 
             }
 

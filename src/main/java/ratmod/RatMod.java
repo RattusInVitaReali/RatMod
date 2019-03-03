@@ -1,17 +1,31 @@
 package ratmod;
 
-import basemod.interfaces.*;
+import archetypeAPI.archetypes.abstractArchetype;
+import basemod.helpers.RelicType;
+
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import basemod.BaseMod;
-import ratmod.cards.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import ratmod.ArchetypeAPI.ArchetypeCards.BleedingSilentArchetypeSelectCard;
+import ratmod.ArchetypeAPI.ArchetypeCards.SilveredSilentArchetypeSelectCard;
+import ratmod.cards.green.*;
+import ratmod.cards.red.*;
+import ratmod.relics.*;
 
+import basemod.interfaces.EditCardsSubscriber;
+import basemod.interfaces.EditKeywordsSubscriber;
+import basemod.interfaces.EditRelicsSubscriber;
+import basemod.interfaces.EditStringsSubscriber;
+import basemod.interfaces.PostInitializeSubscriber;
 
 @SpireInitializer
 public class RatMod
@@ -19,9 +33,23 @@ public class RatMod
         EditCardsSubscriber,
         EditKeywordsSubscriber,
         EditStringsSubscriber,
+        EditRelicsSubscriber,
         PostInitializeSubscriber {
 
     public static final Logger logger = LogManager.getLogger(RatMod.class.getName());
+
+    public static final Color DEFAULT_GRAY = CardHelper.getColor(64.0f, 70.0f, 70.0f);
+
+    private static final String ATTACK_DEAFULT_GRAY = "512/bg_attack_default_gray.png";
+    private static final String POWER_DEAFULT_GRAY = "512/bg_power_default_gray.png";
+    private static final String SKILL_DEAFULT_GRAY = "512/bg_skill_default_gray.png";
+    private static final String ENERGY_ORB_DEAFULT_GRAY = "512/card_default_gray_orb.png";
+    private static final String CARD_ENERGY_ORB = "512/card_small_orb.png";
+
+    private static final String ATTACK_DEAFULT_GRAY_PORTRAIT = "1024/bg_attack_default_gray.png";
+    private static final String POWER_DEAFULT_GRAY_PORTRAIT = "1024/bg_power_default_gray.png";
+    private static final String SKILL_DEAFULT_GRAY_PORTRAIT = "1024/bg_skill_default_gray.png";
+    private static final String ENERGY_ORB_DEAFULT_GRAY_PORTRAIT = "1024/card_default_gray_orb.png";
 
 
     private static final String DEFAULT_MOD_ASSETS_FOLDER = "rat/images";
@@ -37,6 +65,7 @@ public class RatMod
     public static final String ShadowstepPNG = "cards/Shadowstep.png";
     public static final String SprintPNG = "cards/Sprint.png";
     public static final String WitheringShacklesPNG = "cards/WitheringShackles.png";
+    public static final String DecimatePNG = "cards/Decimate.png";
 
     public static final String BleedingPNG = "powers/Bleeding.png";
     public static final String VenomousWoundsPNG = "powers/VenomousWounds.png";
@@ -44,7 +73,27 @@ public class RatMod
     public static final String SilveredPNG = "powers/Silvered.png";
     public static final String SilverCoatingPNG = "powers/SilverCoating.png";
     public static final String SiphonSilverPNG = "powers/SiphonSilver.png";
+    public static final String KircheisPowerPNG = "powers/KircheisShard.png";
+    public static final String EnragedPNG = "powers/Enraged.png";
 
+    public static final String RatRelicPNG = "relics/RatRelic.png";
+    public static final String RatRelicOutlinePNG = "relics/RatRelicOutline.png";
+    public static final String RedSneckoSkullPNG = "relics/RedSneckoSkull.png";
+    public static final String RedSneckoSkullOutlinePNG = "relics/RedSneckoSkullOutline.png";
+    public static final String BigChungusPlushiePNG = "relics/BigChungusPlushie.png";
+    public static final String BigChunfusPlushieOutlinePNG = "relics/BigChungusPlushieOutline.png";
+    public static final String IroncladSkillbookPNG = "relics/IroncladSkillbook.png";
+    public static final String SilentSkillbookPNG = "relics/SilentSkillbook.png";
+    public static final String DefectSkillbookPNG = "relics/DefectSkillbook.png";
+    public static final String SkillbookOutlinePNG = "relics/SkillbookOutline.png";
+    public static final String QuicksilverSashPNG = "relics/QuicksilverSash.png";
+    public static final String QuicksilverSashOutlinePNG = "relics/QuicksilverSashOutline.png";
+    public static final String ZhonyasHourglassPNG = "relics/ZhonyasHourglass.png";
+    public static final String ZhonyasHourglassOutlinePNG = "relics/ZhonyasHourglassOutline.png";
+    public static final String PhantomDancerPNG = "relics/PhantomDancer.png";
+    public static final String PhantomDancerOutlinePNG = "relics/PhantomDancerOutline.png";
+    public static final String SoulRingPNG = "relics/SoulRing.png";
+    public static final String SoulRingOutlinePNG = "relics/SoulRingOutline.png";
 
 
 
@@ -55,6 +104,8 @@ public class RatMod
     public static Texture getSilveredTexture() { return new Texture(makePath(SilveredPNG)); }
     public static Texture getSilverCoatingTexture() { return new Texture(makePath(SilverCoatingPNG)); }
     public static Texture getSiphonSilverTexture() { return new Texture(makePath(SiphonSilverPNG)); }
+    public static Texture getKircheisShardTexture() { return new Texture(makePath(KircheisPowerPNG)); }
+    public static Texture getEnragedTexture() { return new Texture(makePath(EnragedPNG)); }
 
 
 
@@ -67,6 +118,7 @@ public class RatMod
         logger.info("Subscribe to basemod hooks");
 
         BaseMod.subscribe(this);
+
 
         logger.info("Done subscribing");
 
@@ -82,29 +134,20 @@ public class RatMod
     
     @Override
     public void receivePostInitialize() {
+        if (Loader.isModLoaded("archetypeapi")) {
+            abstractArchetype.silentArchetypeSelectCards.addToTop(new BleedingSilentArchetypeSelectCard().makeCopy());
+            abstractArchetype.silentArchetypeSelectCards.addToTop(new SilveredSilentArchetypeSelectCard().makeCopy());
+        }
+    }
 
 
-        
-
-
-       }
-
-    // =============== / POST-INITIALIZE/ =================
-
-       
-
-
-
-    
-    
-    // ================ ADD CARDS ===================
 
     @Override
     public void receiveEditCards() {
 
         
         logger.info("Add Cards");
-        // Add the cards
+        // Green
         BaseMod.addCard(new FanOfKnives());
         BaseMod.addCard(new ArgentInfusion());
         BaseMod.addCard(new SilverDagger());
@@ -131,9 +174,12 @@ public class RatMod
         BaseMod.addCard(new Shadowstep());
         BaseMod.addCard(new Sprint());
 
+        //Red
+        BaseMod.addCard(new Decimate());
+        BaseMod.addCard(new Execute());
 
         logger.info("Making sure the cards are unlocked.");
-        // Unlock the cards
+        // Green
         UnlockTracker.unlockCard(ArgentInfusion.ID);
         UnlockTracker.unlockCard(MoondustBomb.ID);
         UnlockTracker.unlockCard(SilverDagger.ID);
@@ -160,15 +206,34 @@ public class RatMod
         UnlockTracker.unlockCard(MimicPod.ID);
         UnlockTracker.unlockCard(Sprint.ID);
 
+        //Red
+        UnlockTracker.unlockCard(Decimate.ID);
+        UnlockTracker.unlockCard(Execute.ID);
+
+
 
         logger.info("Cards - added!");
     }
-    // ================ /ADD CARDS/ ===================
+
+    @Override
+    public void receiveEditRelics() {
+
+        BaseMod.addRelic(new RedSneckoSkull(), RelicType.GREEN);
+        BaseMod.addRelic(new SilverBolt(), RelicType.GREEN);
+        BaseMod.addRelic(new QuicksilverSash(), RelicType.GREEN);
+        BaseMod.addRelic(new SilverFlask(), RelicType.GREEN);
+
+        BaseMod.addRelic(new PhantomDancer(), RelicType.SHARED);
+        BaseMod.addRelic(new BigChungusPlushie(), RelicType.SHARED);
+        BaseMod.addRelic(new KircheisShard(), RelicType.SHARED);
+        BaseMod.addRelic(new SoulRing(), RelicType.SHARED);
+        BaseMod.addRelic(new ZhonyasHourglass(), RelicType.SHARED);
+
+    }
 
 
-    
-    
-    // ================ LOAD THE TEXT ===================
+
+
 
     @Override
     public void receiveEditStrings() {
@@ -179,13 +244,13 @@ public class RatMod
                 "rat/localization/cardStrings.json");
         BaseMod.loadCustomStringsFile(PowerStrings.class,
                 "rat/localization/powerStrings.json");
+        BaseMod.loadCustomStringsFile(RelicStrings.class,
+                "rat/localization/relicsStrings.json");
 
         logger.info("Done editing strings");
     }
 
-    // ================ /LOAD THE TEXT/ ===================
 
-    // ================ LOAD THE KEYWORDS ===================
 
     @Override
     public void receiveEditKeywords() {
@@ -193,10 +258,12 @@ public class RatMod
         final String[] keywordEcho = {"echo"};
         final String[] keywordBleed = {"bleed","bleeding","bleeds"};
         final String[] keywordSilvered = {"silvered", "silver"};
+        final String[] keywordEnraged = {"enrage", "enraged", "enrages"};
         BaseMod.addKeyword(keywordCombo, "Has an additional effect if you played enough cards this turn.");
         BaseMod.addKeyword(keywordEcho, "Adds a copy of the card to your hand.");
         BaseMod.addKeyword(keywordBleed, "Bleeding enemies take damage at the end of every turn");
         BaseMod.addKeyword(keywordSilvered, "After receiving 3 stacks of Silvered, taking damage activates the Silver, dealing 30 additional damage and cleansing it.");
+        BaseMod.addKeyword(keywordEnraged, "Gain Strength and Vulnerable at the start of your turn.");
     }
 
 

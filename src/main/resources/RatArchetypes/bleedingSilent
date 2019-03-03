@@ -1,0 +1,14 @@
+{
+  "rat:BleedingSilent": {
+    "NAME": "Bleeding",
+    "CARD_IDS": [
+      "rat:BloodPact",
+      "rat:Dispatch",
+      "rat:Exsanguinate",
+      "rat:Garrote",
+      "rat:RuptureArtery",
+      "rat:VenomousWounds",
+      "rat:SiphonBlood"
+    ]
+  }
+}

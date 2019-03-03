@@ -1,12 +1,14 @@
+
+
 {
 	"rat:FanOfKnives": {
 		"NAME": "Fan of Knives",
-		"DESCRIPTION": "Deal !D! damage to all enemies twice. NL Draw 1 card.",
-		"UPGRADE_DESCRIPTION": "Deal !D! damage to all enemies twice. NL Draw 2 cards."
+		"DESCRIPTION": "Deal !D! damage to ALL enemies twice. NL Draw 1 card.",
+		"UPGRADE_DESCRIPTION": "Deal !D! damage to ALL enemies twice. NL Draw 2 cards."
 	},
 	"rat:ColdBlood": {
 		"NAME": "Cold Blood",
-		"DESCRIPTION": "Gain !M! Strength. NL Combo 3: Gain !M! Strength again. NL Exhaust."
+		"DESCRIPTION": "Gain !M! Strength. NL Combo 3: Gain 2 more Strength."
 	},
 	"rat:Shadowstep": {
 		"NAME": "Shadowstep",
@@ -14,11 +16,11 @@
 	},
 	"rat:MimicPod": {
 		"NAME": "Mimic Pod",
-		"DESCRIPTION": "Draw 2 cards. Gain !M! Strength for each Attack drawn, and gain !M! Dexterity for each Skill drawn."
+		"DESCRIPTION": "Draw 2 cards. Gain !M! Strength for each Attack drawn, gain !M! Dexterity for each Skill drawn, and draw an additional card for each Power drawn."
 	},
 	"rat:OpeningStrike": {
 		"NAME": "Opening Strike",
-		"DESCRIPTION": "Innate. Deal !D! damage twice. If this was the first card played this turn, deal !D! damage again. NL Exhaust."
+		"DESCRIPTION": "Innate. Deal !D! damage twice. If this was the first card played this turn, apply 1 Silvered. NL Exhaust."
 	},
 	"rat:Disembowel": {
 		"NAME": "Disembowel",
@@ -34,8 +36,8 @@
 	},
 	"rat:AtrophicSteroids": {
 		"NAME": "Atrophic Steroids",
-		"DESCRIPTION": "Gain !M! Strength and Dexterity. Lose 5 Strength and Dexterity at the end of your turn. Poison yourself for 6. NL Exhaust.",
-		"UPGRADE_DESCRIPTION": "Gain !M! Strength and Dexterity. Lose 7 Strength and Dexterity at the end of your turn. Poison yourself for 6. NL Exhaust."
+		"DESCRIPTION": "Gain !M! Strength and Dexterity. Lose 5 Strength and Dexterity at the end of your turn. NL Exhaust.",
+		"UPGRADE_DESCRIPTION": "Gain !M! Strength and Dexterity. Lose 7 Strength and Dexterity at the end of your turn. NL Exhaust."
 	},
 	"rat:EchoingStrikes": {
 		"NAME": "Echoing Strikes",
@@ -47,7 +49,7 @@
 	},
 	"rat:Dispatch": {
 		"NAME": "Dispatch",
-		"DESCRIPTION": "Deal !D! damage. Apply (!M! + your current Strength) Bleeding."
+		"DESCRIPTION": "Deal !D! damage. Apply ( !M! + your current Strength) Bleeding."
 	},
 	"rat:VenomousWounds": {
 		"NAME": "Venomous Wounds",
@@ -96,6 +98,22 @@
 	"rat:SiphonSilver": {
 		"NAME": "Siphon Silver",
 		"DESCRIPTION": "Whenever you attack an enemy affected by Silvered, heal for 2 times the amount of silvered."
+	},
+	"rat:Decimate": {
+		"NAME": "Decimate",
+		"DESCRIPTION": "At the start of your next turn, deal !D! damage to ALL enemies."
+	},
+	"rat:Execute": {
+		"NAME": "Execute",
+		"DESCRIPTION": "Deal !D! damage. Deals double damage if the target has less than half HP. If it kills the enemy, become Enraged."
+	},
+	"rat:SilveredSilentArchetypeSelectCard": {
+		"NAME": "Silvered",
+		"DESCRIPTION": "Add the Silvered Archetype to your card Draft Pool."
+	},
+	"rat:BleedingSilentArchetypeSelectCard": {
+		"NAME": "Bleeding",
+		"DESCRIPTION": "Add the Bleeding Archetype to your Card Draft Pool."
 	},
 	"rat:Sprint": {
 		"NAME": "Sprint",

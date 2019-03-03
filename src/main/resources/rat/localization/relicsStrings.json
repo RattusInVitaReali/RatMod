@@ -1,0 +1,74 @@
+{
+  "rat:RedSneckoSkull": {
+    "NAME": "Red Snecko Skull",
+    "DESCRIPTIONS": [
+      "Whenever you apply #yBleeding, apply #b1 additional stack of #yBleeding."
+    ]
+  },
+  "rat:SilverBolt": {
+    "NAME": "Silver Bolt",
+    "DESCRIPTIONS": [
+      "Whenever you proc #ySilvered, apply #b2 #yWeak."
+    ]
+  },
+  "rat:QuicksilverSash": {
+    "NAME": "Quicksilver Sash",
+    "DESCRIPTIONS": [
+      "Whenever you proc #ySilvered, remove ALL of your debuffs."
+    ]
+  },
+  "rat:BigChungusPlushie": {
+    "NAME": "Big Chungus Plushie",
+    "DESCRIPTIONS": [
+      "At the start of combat, gain #b4 #yStrength and become #ySlowed."
+    ]
+  },
+  "rat:DefectSkillbook": {
+    "NAME": "Defect Skillbook",
+    "DESCRIPTIONS": [
+      "At the start of combat, gain #b4 Orb slots and channel #b2 #yLightning and #b2 #yFrost."
+    ]
+  },
+  "rat:IroncladSkillbook": {
+    "NAME": "Ironclad Skillbook",
+    "DESCRIPTIONS": [
+      "At the start of each turn gain #b1 #yStrength. At the end of combat, heal #b6 HP."
+    ]
+  },
+  "rat:SilentSkillbook": {
+    "NAME": "Silent Skillbook",
+    "DESCRIPTIONS": [
+      "At the start of combat draw #b2 cards. Whenever you deal unblocked damage to an enemy, apply #b1 #yPoison. Apply #b1 #yPoison to all enemies at the end of your turn."
+    ]
+  },
+  "rat:SilverFlask": {
+    "NAME": "Silver Flask",
+    "DESCRIPTIONS": [
+      "Gain [E] and at the start of your turn. Every other time you shuffle your deck, become #ySilvered."
+    ]
+  },
+  "rat:KircheisShard": {
+    "NAME": "Kircheis Shard",
+    "DESCRIPTIONS": [
+      "Whenever you play #b5 Skills, your next attack will deal #b6 bonus damage."
+    ]
+  },
+  "rat:SoulRing": {
+    "NAME": "Soul Ring",
+    "DESCRIPTIONS": [
+      "Lose #b3 HP. Gain [E] ."
+    ]
+  },
+  "rat:ZhonyasHourglass": {
+    "NAME": "Zhonya's Hourglass",
+    "DESCRIPTIONS": [
+      "Usable once per combat. Usable only if you haven't played any cards this turn. Become #yIntangible and #yEntangled."
+    ]
+  },
+  "rat:PhantomDancer": {
+    "NAME": "Phantom Dancer",
+    "DESCRIPTIONS": [
+      "Whenever you play #b3 Attacks in a single turn, gain #b1 #yBlur."
+    ]
+  }
+}

@@ -3,9 +3,9 @@
   "name": "RatMod",
   "author_list": ["Rattus in Vita Reali"],
   "description": "A mod that adds a bunch of new  cards for the Silent, as well as 3 new keywords: Bleeding, Combo and Echo. WARNING: Now dependant on stslib aswell!",
-  "version": "1.2.2",
+  "version": "2.0.2",
   "sts_version": "10-25-2018",
-  "credits": "Big thanks to Reina code-wise and to Jedi for letting me borrow his main.jar (along with many other things but don't tell him!).",
+  "credits": "Big thanks to everyone from the Discord community, and special thanks to Arch, who withstood and with great patience answered all my questions.",
   "mts_version": "3.5.0",
   "dependencies": ["basemod","stslib"]
 }

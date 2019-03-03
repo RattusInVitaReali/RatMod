@@ -1,6 +1,8 @@
 package ratmod.powers;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.unique.RemoveDebuffsAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -45,14 +47,23 @@ public class SilveredPower extends AbstractPower {
 
         if (this.amount >= 3)
         {
-            this.amount -= 3;
+            if (AbstractDungeon.player.hasRelic("rat:SilverBolt")) {
+                AbstractDungeon.player.getRelic("rat:SilverBolt").flash();
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new WeakPower(this.owner, 2, false), 2));
+            }
+
+            if (AbstractDungeon.player.hasRelic("rat:QuicksilverSash")) {
+                AbstractDungeon.player.getRelic("rat:QuicksilverSash").flash();
+                AbstractDungeon.actionManager.addToBottom(new RemoveDebuffsAction(AbstractDungeon.player));
+            }
+
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(owner, new DamageInfo(owner, (this.amount * 10), DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.SLASH_HEAVY));
             AbstractPower p = this.owner.getPower("Silvered");
             if (p != null)
             {
-                AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, SilveredPower.POWER_ID));
+                AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, SilveredPower.POWER_ID));
             }
 
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(owner, new DamageInfo(owner, 30), AbstractGameAction.AttackEffect.SLASH_HEAVY));
         }
         return damageAmount;
     }
